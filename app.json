@@ -1,0 +1,37 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/test/index",
+    "pages/about/index",
+    "pages/form/index"
+  ],
+  "window": {
+    "backgroundColor": "#F6F6F6",
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#F6F6F6",
+    "navigationBarTitleText": "奔奔装修",
+    "navigationBarTextStyle": "black"
+  },
+  "usingComponents": {
+    "t-button": "tdesign-miniprogram/button/button"
+  },
+  "sitemapLocation": "sitemap.json",
+  "tabBar": {
+    "list": [{
+      "pagePath": "pages/index/index",
+      "iconPath": "images/home.png",
+      "selectedIconPath": "images/home_active.png",
+      "text": "首页"
+    }, {
+      "pagePath": "pages/test/index",
+      "iconPath": "images/dev.png",
+      "selectedIconPath": "images/dev_active.png",
+      "text": "测试"
+    }, {
+        "pagePath": "pages/about/index",
+        "iconPath": "images/about.png",
+        "selectedIconPath": "images/about_active.png",
+        "text": "关于"
+      }]
+  }
+}

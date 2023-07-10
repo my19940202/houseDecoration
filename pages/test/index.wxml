@@ -1,0 +1,7 @@
+<!--test.wxml-->
+<view class="container">
+    <view class="title">测试功能list页面，用于测试各类功能</view>
+    <view>
+        <text bindtap="jumpTo" data-path="form">1. 点击跳转表单测试页面</text>
+    </view>
+</view>

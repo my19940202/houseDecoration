@@ -1,0 +1,14 @@
+/**index.wxss**/
+
+page {
+  padding: 0 5rpx;
+  background-color: #f6f6f6;
+}
+.title {
+    font-size: larger ;
+    color: black;
+  }
+.content {
+  font-size: small;
+  color: darkgray;
+}

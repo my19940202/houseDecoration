@@ -1,0 +1,7 @@
+{
+    "usingComponents": {
+        "t-swiper": "tdesign-miniprogram/swiper/swiper",
+        "t-swiper-nav": "tdesign-miniprogram/swiper-nav/swiper-nav",
+        "t-cell": "tdesign-miniprogram/cell/cell"
+    }
+}

@@ -1,0 +1,8 @@
+{
+    "usingComponents": {
+        "t-link": "tdesign-miniprogram/link/link"
+    },
+    "enablePullDownRefresh": true,
+    "navigationBarBackgroundColor": "#11ff00",
+    "backgroundTextStyle": "dark"
+}

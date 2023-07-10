@@ -1,0 +1,19 @@
+<!--index.wxml-->
+<view class="container">
+    <view class="swiper-wrapper">
+        <t-swiper
+            list="{{imageList}}"
+        >
+        </t-swiper>
+    </view>
+    <view class="title">今天是和依林谈恋爱的第{{daySinceLove}}天</view>
+    <view class="milestone-wrapper">
+        <t-cell title="2018-06-30" description="世界杯不小心就认识了" />
+        <t-cell title="2018-12-10" description="12月份牵手了" />
+        <t-cell title="2019-03-10" description="没羞没臊住一起啦" />
+        <t-cell title="2021-12-24" description="结婚-领证啦" />
+        <t-cell title="2022-09-03" description="买房-房产证到手" />
+        <t-cell title="2023-02-08" description="房子装修好了搬进来啦">
+        </t-cell>
+    </view>
+</view>

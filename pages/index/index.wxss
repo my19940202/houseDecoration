@@ -1,0 +1,15 @@
+/**index.wxss**/
+
+page {
+  padding-top: 0rpx;
+  background-color: #f6f6f6;
+  padding-bottom: 60rpx;
+}
+.swiper-wrapper {
+    width: 100%;
+    height: auto;
+}
+.milestone-wrapper {
+    width: 100%;   
+    height: auto;
+}
