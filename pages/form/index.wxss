@@ -9,6 +9,9 @@ page {
     color: black;
   }
 .content {
-  font-size: small;
-  color: darkgray;
+  width: 100%;
+}
+.submit {
+  margin-top: 30rpx;
+  text-align: center;
 }

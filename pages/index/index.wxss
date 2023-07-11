@@ -10,6 +10,6 @@ page {
     height: auto;
 }
 .milestone-wrapper {
-    width: 100%;   
+    width: 100%;
     height: auto;
 }

@@ -13,7 +13,8 @@
     "navigationBarTextStyle": "black"
   },
   "usingComponents": {
-    "t-button": "tdesign-miniprogram/button/button"
+    "t-button": "tdesign-miniprogram/button/button",
+    "t-cell": "tdesign-miniprogram/cell/cell"
   },
   "sitemapLocation": "sitemap.json",
   "tabBar": {
@@ -26,7 +27,7 @@
       "pagePath": "pages/test/index",
       "iconPath": "images/dev.png",
       "selectedIconPath": "images/dev_active.png",
-      "text": "测试"
+      "text": "表单测试"
     }, {
         "pagePath": "pages/about/index",
         "iconPath": "images/about.png",

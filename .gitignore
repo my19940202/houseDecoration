@@ -1,0 +1,7 @@
+node_modules/
+cloudfunctions
+miniprogram_npm/
+miniprogram_dist/
+.DS_Store
+$node_modules/
+**/dist

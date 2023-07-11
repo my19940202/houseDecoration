@@ -1,7 +1,10 @@
 <!--test.wxml-->
 <view class="container">
     <view class="title">测试功能list页面，用于测试各类功能</view>
-    <view>
-        <text bindtap="jumpTo" data-path="form">1. 点击跳转表单测试页面</text>
+    <view class="content">
+        <t-cell-group theme="card">
+            <t-cell title="表单提交页面" bindtap="jumpTo" data-path="form" leftIcon="service" hover arrow />
+            <!-- <t-cell title="表单结果页面" leftIcon="internet" hover arrow /> -->
+        </t-cell-group>
     </view>
 </view>

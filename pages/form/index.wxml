@@ -1,3 +1,16 @@
 <view class="container">
-    <text class="title">这是表单页面</text>
+    <text class="title">预约咨询表单</text>
+    <view class="content">
+        <t-input label="您的姓名" bindchange="setFormData" data-label="name" value="{{name}}" placeholder="请输入文字"></t-input>
+        <t-input label="您的电话" bindchange="setFormData" data-label="phone" value="{{phone}}" placeholder="请输入文字" />
+        <t-input label="咨询内容" bindchange="setFormData" data-label="text" value="{{text}}" placeholder="请输入文字" />
+        <view class="submit">
+            <t-button bindtap="submitForm" slot="suffix" theme="primary">提交预约</t-button>
+        </view>
+    </view>
+    <text class="title">表单提交结果</text>
+    <view class="content" wx:for="{{list}}">
+        <text>{{index+1}}</text>: 
+        <text>{{item.name}}</text> <text>{{item.phone}}</text> <text>{{item.text}}</text>
+    </view>
 </view>
