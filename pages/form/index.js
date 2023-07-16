@@ -9,10 +9,10 @@ Page({
         list: []
     },
     onLoad() {
-        const db = wx.cloud.database();
-        console.log('form page');
+        // 获取全局变量上共享的环境获取数据
+        var appInstance = getApp();
+        const db = appInstance.globalData.shareWx.database();
         db.collection('housing_forms').get().then(res => {
-            // res.data 包含该记录的数据
             console.log(res.data)
             this.setData({
                 list: res.data
