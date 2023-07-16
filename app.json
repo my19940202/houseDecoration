@@ -1,16 +1,17 @@
 {
   "pages": [
     "pages/index/index",
+    "pages/category/index",
     "pages/test/index",
-    "pages/about/index",
+    "pages/user/index",
     "pages/form/index"
   ],
   "window": {
     "backgroundColor": "#F6F6F6",
     "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#F6F6F6",
+    "navigationBarBackgroundColor": "#07c160",
     "navigationBarTitleText": "刘师傅一站式家",
-    "navigationBarTextStyle": "black"
+    "navigationBarTextStyle": "white"
   },
   "usingComponents": {
     "t-button": "tdesign-miniprogram/button/button",
@@ -24,15 +25,15 @@
       "selectedIconPath": "images/home_active.png",
       "text": "首页"
     }, {
-      "pagePath": "pages/test/index",
-      "iconPath": "images/dev.png",
-      "selectedIconPath": "images/dev_active.png",
-      "text": "表单测试"
+      "pagePath": "pages/category/index",
+      "iconPath": "images/category.png",
+      "selectedIconPath": "images/category_active.png",
+      "text": "分类"
     }, {
-        "pagePath": "pages/about/index",
-        "iconPath": "images/about.png",
-        "selectedIconPath": "images/about_active.png",
-        "text": "关于"
+        "pagePath": "pages/user/index",
+        "iconPath": "images/user.png",
+        "selectedIconPath": "images/user_active.png",
+        "text": "我的"
       }]
   }
 }

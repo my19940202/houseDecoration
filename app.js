@@ -3,9 +3,8 @@ App({
     onLaunch: async function () {
         if (wx.cloud) {
             const shareWx = new wx.cloud.Cloud({
-                // 资源方 AppID
+                // 资源方: AppID + 资源方环境ID
                 resourceAppid: 'wx47cf005024af6c8f',
-                // 资源方环境 ID
                 resourceEnv: 'cloud1-5g5eyjtze161c202',
             })
             await shareWx.init();

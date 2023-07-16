@@ -11,8 +11,8 @@ Page({
     onLoad() {
         // 获取全局变量上共享的环境获取数据
         var appInstance = getApp();
-        const db = appInstance.globalData.shareWx.database();
-        db.collection('housing_forms').get().then(res => {
+        this.db = appInstance.globalData.shareWx.database();
+        this.db.collection('housing_forms').get().then(res => {
             console.log(res.data)
             this.setData({
                 list: res.data
@@ -28,9 +28,8 @@ Page({
         });
     },
     submitForm() {
-        const db = wx.cloud.database();
         const {name, phone, text} = this.data;
-        db.collection('housing_forms').add({
+        this.db.collection('housing_forms').add({
             // data 字段表示需新增的 JSON 数据
             data: {name, phone, text},
             success: function(res) {
