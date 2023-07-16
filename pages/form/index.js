@@ -11,7 +11,7 @@ Page({
     onLoad() {
         // 获取全局变量上共享的环境获取数据
         var appInstance = getApp();
-        this.db = appInstance.globalData.shareWx.database();
+        this.db = appInstance.globalData.wxCloud.database();
         this.db.collection('housing_forms').get().then(res => {
             console.log(res.data)
             this.setData({
