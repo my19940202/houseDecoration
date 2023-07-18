@@ -1,10 +1,27 @@
-<!--test.wxml-->
-<view class="container">
-    <view class="title">测试功能list页面，用于测试各类功能</view>
-    <view class="content">
-        <t-cell-group theme="card">
-            <t-cell title="表单提交页面" bindtap="jumpTo" data-path="form" leftIcon="service" hover arrow />
-            <!-- <t-cell title="表单结果页面" leftIcon="internet" hover arrow /> -->
-        </t-cell-group>
-    </view>
+<view class="side-bar-wrapper">
+    <t-side-bar value="{{sideBarIndex}}" bind:change="onSideBarChange">
+        <t-side-bar-item
+            wx:for="{{categories}}"
+            wx:key="index"
+            value="{{item.value || index}}"
+            label="{{item.label}}"
+            badge-props="{{item.badgeProps}}"
+        />
+    </t-side-bar>
+    <scroll-view
+        class="content" scroll-y scroll-with-animation scroll-top="{{scrollTop}}" bind:scroll="onScroll">
+        <view wx:for="{{categories}}" wx:key="index" class="section">
+            <view class="title">{{item.title || item.label}}</view>
+            <t-grid column="{{3}}" border="{{false}}">
+                <block wx:for="{{item.items}}" wx:key="index" wx:for-item="cargo">
+                <t-grid-item
+                    text="{{cargo.label}}"
+                    image="{{cargo.image}}"
+                    image-props="{{ { shape: 'round', lazy: true } }}"
+                >
+                </t-grid-item>
+                </block>
+            </t-grid>
+        </view>
+    </scroll-view>
 </view>
