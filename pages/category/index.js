@@ -11,12 +11,12 @@ Page({
                 label: '门窗',
                 title: '门窗淋浴房',
                 items: [
-                    {label: '​平移窗封阳台', image},
-                    {label: '漂移窗封阳台', image},
-                    {label: '​内开窗封阳台', image},
-                    {label: '​淋浴房', image},
-                    {label: '​卫生间玻璃移门', image},
-                    {label: '​折叠门', image}
+                    {label: '​平移窗封阳台', image: 'https://636c-cloud1-5g5eyjtze161c202-1319072486.tcb.qcloud.la/static/housing/window.webp?sign=8c58a60728d3f5a4326da5dc61a9903d&t=1689689797'},
+                    {label: '漂移窗封阳台', image: 'https://636c-cloud1-5g5eyjtze161c202-1319072486.tcb.qcloud.la/static/housing/window.webp?sign=8c58a60728d3f5a4326da5dc61a9903d&t=1689689797'},
+                    {label: '​内开窗封阳台', image: 'https://636c-cloud1-5g5eyjtze161c202-1319072486.tcb.qcloud.la/static/housing/window.webp?sign=8c58a60728d3f5a4326da5dc61a9903d&t=1689689797'},
+                    {label: '​淋浴房', image: 'https://636c-cloud1-5g5eyjtze161c202-1319072486.tcb.qcloud.la/static/housing/shower.webp?sign=090bb0799ead19536d2f6767b8cbef04&t=1689689904'},
+                    {label: '​卫生间玻璃移门', image: 'https://636c-cloud1-5g5eyjtze161c202-1319072486.tcb.qcloud.la/static/housing/yimen.avif?sign=75193c93645bf8d370d11275a56e835d&t=1689690297'},
+                    {label: '​折叠门', image: ""}
                 ]
             },
             {
