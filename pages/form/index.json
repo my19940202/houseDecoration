@@ -4,6 +4,7 @@
     "backgroundTextStyle": "dark",
     "navigationBarTextStyle": "white",
     "usingComponents": {
-        "t-input": "tdesign-miniprogram/input/input"
+        "t-input": "tdesign-miniprogram/input/input",
+        "t-button": "tdesign-miniprogram/button/button"
     }
 }

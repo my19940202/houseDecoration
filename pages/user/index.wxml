@@ -1,7 +1,7 @@
 <view class="container">
     <view class="userinfo">
         <view class="milestone-wrapper">
-            <t-cell title="我的订单" hover arrow />
+            <t-cell title="我的订单" bindtap="jumpTo" data-path="order" hover arrow />
             <t-cell title="关于我们" bindtap="jumpTo" data-path="about" hover arrow />
         </view>
         <!--

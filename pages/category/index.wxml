@@ -17,6 +17,8 @@
                 <t-grid-item
                     text="{{cargo.label}}"
                     image="{{cargo.image}}"
+                    bindtap="jumpTo"
+                    data-type="{{cargo.label}}"
                     image-props="{{ { shape: 'round', lazy: true } }}"
                 >
                 </t-grid-item>

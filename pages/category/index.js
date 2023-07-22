@@ -28,7 +28,8 @@ Page({
                     {label: '​室内拆墙与改造', image},
                     {label: '​吊顶扩宽与定制', image},
                     {label: '​移电位', image},
-                    {label: '​刷漆服务', image}
+                    {label: '​阳台刷漆', image},
+                    {label: '​室内刷漆', image}
                 ]
             },
             {
@@ -93,7 +94,17 @@ Page({
                 items: [
                     {label: '​德高美缝', image},
                     {label: '​皇氏工匠美缝', image},
-                    {label: '​卓高美缝', image}
+                    {label: '​卓高美缝', image},
+                    {label: '​瓦克收边', image}
+                ]
+            },
+            {
+                label: '门套',
+                title: '门套',
+                items: [
+                    {label: '木制门套', image},
+                    {label: '​不锈钢门套', image},
+                    {label: '直接刷漆，不做门套', image}
                 ]
             },
             {
@@ -141,5 +152,10 @@ Page({
         if (index > -1) {
             this.setData({ sideBarIndex: index });
         }
+    },
+    jumpTo(event) {
+        wx.navigateTo({
+            url: `/pages/detail/index?type=${event.target.dataset.type}`
+        });
     }
 });
