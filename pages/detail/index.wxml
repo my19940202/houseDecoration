@@ -1,13 +1,16 @@
 <view class="container">
-    <view class="title">顶部轮播图</view>
-    <view class="title">文字介绍</view>
-    <view class="title">底部预约表单</view>
+    <view class="swiper-wrapper">
+        <t-swiper height="350" image-props="{{ {mode: 'heightFix'} }}" list="{{detail.images}}"  navigation="{{ {type: 'dots-bar'} }}">
+        </t-swiper>
+    </view>
     <view class="content">
+        <t-cell leftIcon="bulletpoint" title="介绍" description="{{detail.text}}"></t-cell>
+        <t-cell leftIcon="books" title="预约"></t-cell>
         <t-input label="您的姓名" bindchange="setFormData" data-label="name" value="{{name}}" placeholder="请输入文字"></t-input>
         <t-input label="您的电话" bindchange="setFormData" data-label="phone" value="{{phone}}" placeholder="请输入文字" />
         <t-input label="咨询内容" bindchange="setFormData" data-label="text" value="{{text}}" placeholder="请输入文字" />
         <view class="submit">
-            <t-button bindtap="submitForm" slot="suffix" theme="primary">提交预约</t-button>
+            <t-button bindtap="submitForm" slot="suffix" style="background-color:#07c160;color:#fff;">提交预约</t-button>
         </view>
     </view>
 </view>

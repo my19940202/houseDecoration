@@ -27,7 +27,7 @@ App({
             if (configData && configData[0] && configData[1]) {
                 const imageList = configData[0].images;
                 const category = configData[1].list;
-                this.globalData.category = category;
+                me.globalData = {...me.globalData, category, imageList};
                 curPage[0].init(imageList, category);
             };
         });

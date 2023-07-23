@@ -1,34 +1,43 @@
 // index.js
 import Message from 'tdesign-miniprogram/message/index';
+const app = getApp();
 Page({
     data: {
         category: {},
-        name: '',
-        phone: '',
-        text: ''
+        detail: {
+            images: app.globalData.imageList
+        },
+        form: {
+            name: '',
+            phone: '',
+            text: ''
+        }
     },
     onLoad(options) {
-        this.setData({category: options});
+        const me = this;
+        me.setData({category: options});
         // 从全局变量的共享云环境查询数据
-        var appInstance = getApp();
-        this.db = appInstance.globalData.wxCloud.database();
-        // this.db.collection('housing_forms').get().then(res => {
-        //     console.log(res.data)
-        //     this.setData({
-        //         list: res.data
-        //     });
-        // })
+        me.db = app.globalData.wxCloud.database();
+        me.db.collection('housing_details').where({key: options.key}).get().then(res => {
+            if (res.data && res.data[0]) {
+                me.setData({
+                    detail: {...me.data.detail, ...res.data[0]}
+                });
+            }
+        });
     },
     setFormData(event) {
-        console.log('event', event);
         const key = event.target.dataset.label;
         const value = event.detail && event.detail.value;
         this.setData({
-            [key]: value
+            form: {
+                ...this.data.form,
+                [key]: value
+            }
         });
     },
     submitForm() {
-        const {name, phone, text} = this.data;
+        const {name, phone, text} = this.data.form;
         this.db.collection('housing_forms').add({
             // data 字段表示需新增的 JSON 数据
             data: {name, phone, text},
