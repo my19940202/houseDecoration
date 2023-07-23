@@ -1,18 +1,19 @@
-const image = 'https://res.app.ikea.cn/content/u/20220119/f99644d37a3641bab08a0f4806bdc2d2.jpg?x-oss-process=image//interlace,1/resize,w_200';
-const items = new Array(10).fill({ label: '标题' }, 0, 10);
+import {defImg} from './../../constant/index.js';
 const app = getApp();
 
 Page({
     offsetTopList: [],
     data: {
+        defImg,
         sideBarIndex: 0,
         scrollTop: 0,
         categories: app.globalData.category
     },
-    onLoad() {
-        // this.setData({
-        //     category: app.globalData.category
-        // });
+    onLoad(options) {
+        // url传参时更新active bar
+        if (options.index !== undefined) {
+            this.setData({sideBarIndex: options.index})
+        }
         // 载入后动态就算每个分类标题的top 用于后续滚动定位
         const query = wx.createSelectorQuery().in(this);
         const {sideBarIndex} = this.data;
@@ -47,7 +48,7 @@ Page({
     },
     jumpTo(event) {
         wx.navigateTo({
-            url: `/pages/detail/index?type=${event.target.dataset.type}`
+            url: `/pages/detail/index?category=${event.target.dataset.type}`
         });
     }
 });

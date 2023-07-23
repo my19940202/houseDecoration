@@ -4,5 +4,5 @@
     height: auto;
 }
 .category-wrapper {
-    height: auto;
+    margin-top: 32rpx;
 }

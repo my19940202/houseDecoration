@@ -22,15 +22,15 @@
     "sitemapLocation": "sitemap.json",
     "tabBar": {
         "list": [{
-        "pagePath": "pages/index/index",
-        "iconPath": "images/home.png",
-        "selectedIconPath": "images/home_active.png",
-        "text": "首页"
+            "pagePath": "pages/index/index",
+            "iconPath": "images/home.png",
+            "selectedIconPath": "images/home_active.png",
+            "text": "首页"
         }, {
-        "pagePath": "pages/category/index",
-        "iconPath": "images/category.png",
-        "selectedIconPath": "images/category_active.png",
-        "text": "分类"
+            "pagePath": "pages/category/index",
+            "iconPath": "images/category.png",
+            "selectedIconPath": "images/category_active.png",
+            "text": "分类"
         }, {
             "pagePath": "pages/user/index",
             "iconPath": "images/user.png",

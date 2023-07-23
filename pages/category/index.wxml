@@ -16,7 +16,7 @@
                 <block wx:for="{{item.items}}" wx:key="index" wx:for-item="cargo">
                 <t-grid-item
                     text="{{cargo.label}}"
-                    image="{{cargo.image}}"
+                    image="{{cargo.image || defImg}}"
                     bindtap="jumpTo"
                     data-type="{{cargo.label}}"
                     image-props="{{ { shape: 'round', lazy: true } }}"

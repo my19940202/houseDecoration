@@ -2,12 +2,15 @@
 import Message from 'tdesign-miniprogram/message/index';
 Page({
     data: {
+        category: '',
         name: '',
         phone: '',
         text: ''
     },
     onLoad(options) {
-        console.log('this is onLoad', options);
+        this.setData({
+            category: options.category
+        });
         // 获取全局变量上共享的环境获取数据
         var appInstance = getApp();
         this.db = appInstance.globalData.wxCloud.database();
