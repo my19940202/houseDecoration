@@ -14,7 +14,8 @@ App({
         }
     },
     async fetchInitData() {
-        const db = this.globalData.wxCloud.database();
+        const me = this;
+        const db = me.globalData.wxCloud.database();
         const curPage = getCurrentPages();
         const type = {
             $in: ['index_poster', 'category']
@@ -31,6 +32,15 @@ App({
             };
         });
 
-        // TODO: 发起云函数请求 获取到这个用户的id 便于后续表单提交
+        // 发起云函数请求 获取个用户id
+        me.globalData.wxCloud.callFunction({
+            name: 'helloworld',
+            success: function(res) {
+                const {appId, openId} = res.result && res.result.event && res.result.event.userInfo;
+                me.globalData = {
+                    ...me.globalData, appId, openId
+                };
+            }
+        })
     }
 });

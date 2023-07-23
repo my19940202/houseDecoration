@@ -47,7 +47,8 @@ Page({
         }
     },
     jumpTo(event) {
-        const {label, key} = event.target.dataset;
-        wx.navigateTo({url: `/pages/detail/index?key=${key}&label=${label}`});
+        const {label, nkey} = event.target.dataset;
+        console.log(event.target.dataset, 'event.target.dataset');
+        wx.navigateTo({url: `/pages/detail/index?key=${nkey}&label=${label}`});
     }
 });

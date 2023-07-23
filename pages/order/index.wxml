@@ -1,6 +1,6 @@
 <view class="container">
     <view class="order-list">
-        <t-cell wx:for="{{list}}" wx:key="{{item._id}}" 
+        <t-cell wx:for="{{list}}" wx:key="_id" 
             title="{{item.idx + '. ' + item.name}}"
             description="{{item.phone + item.text + item._openid}}">
         </t-cell>

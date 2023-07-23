@@ -1,6 +1,4 @@
-<!--test.wxml-->
 <view class="container">
-    <view class="title">{{category}}</view>
     <view class="title">顶部轮播图</view>
     <view class="title">文字介绍</view>
     <view class="title">底部预约表单</view>

@@ -13,12 +13,12 @@
         <view wx:for="{{categories}}" wx:key="index" class="section">
             <view class="title">{{item.title || item.label}}</view>
             <t-grid column="{{3}}" border="{{false}}">
-                <block wx:for="{{item.items}}" wx:key="index" wx:for-item="cargo">
+                <block wx:for="{{item.items}}" wx:key="index" wx:for-item="element">
                 <t-grid-item
-                    text="{{cargo.label}}"
-                    image="{{cargo.image || defImg}}"
+                    text="{{element.label}}"
+                    image="{{element.image || defImg}}"
                     bindtap="jumpTo"
-                    data-label="{{item.label}}" data-key="{{item.key}}"
+                    data-label="{{element.label}}" data-key="{{element.key}}"
                     image-props="{{ { shape: 'round', lazy: true } }}"
                 >
                 </t-grid-item>
