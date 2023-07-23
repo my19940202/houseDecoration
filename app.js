@@ -16,10 +16,21 @@ App({
     async fetchInitData() {
         const db = this.globalData.wxCloud.database();
         const curPage = getCurrentPages();
-        db.collection('housing_configs').get({type: 'index_poster'}).then(res => {
-            // 扩组件通信
-            res.data && res.data[0]
-                && curPage[0].init(res.data[0].images);
-        })
+        const type = {
+            $in: ['index_poster', 'category']
+        };
+
+        db.collection('housing_configs').get({type}).then(res => {
+            // 组件通信
+            const configData = res.data || [];
+            if (configData && configData[0] && configData[1]) {
+                const imageList = configData[0].images;
+                const category = configData[1].list;
+                this.globalData.category = category;
+                curPage[0].init(imageList, category);
+            };
+        });
+
+        // TODO: 发起云函数请求 获取到这个用户的id 便于后续表单提交
     }
 });

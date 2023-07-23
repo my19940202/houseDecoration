@@ -1,16 +1,13 @@
 page {
     background-color: #fff;
 }
-  
 page .round-image {
     border-radius: 12rpx;
 }
-
 .side-bar-wrapper {
     display: flex;
     height: 100vh;
 }
-
 .side-bar-wrapper .content {
     flex: 1;
 }

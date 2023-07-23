@@ -13,14 +13,12 @@ Page({
         var appInstance = getApp();
         this.db = appInstance.globalData.wxCloud.database();
         this.db.collection('housing_forms').get().then(res => {
-            console.log(res.data)
             this.setData({
                 list: res.data
             });
         })
     },
     setFormData(event) {
-        console.log('event', event);
         const key = event.target.dataset.label;
         const value = event.detail && event.detail.value;
         this.setData({

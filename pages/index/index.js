@@ -6,13 +6,15 @@ Page({
         img1: 'https://tdesign.gtimg.com/miniprogram/images/example1.png',
         img2: 'https://tdesign.gtimg.com/miniprogram/images/example2.png',
         img3: 'https://tdesign.gtimg.com/miniprogram/images/example3.png',
+        category: []
     },
     onLoad() {
-        // 获取轮播图片url
-        // this.db = app.globalData.wxCloud.database();
-        console.log('this is onload');
+        // 初始化
     },
-    init(imageList) {
-        this.setData({imageList})
+    init(imageList, category) {
+        this.setData({
+            imageList,
+            category: category.slice(0, 8)
+        })
     }
 });
