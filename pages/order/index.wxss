@@ -1,6 +1,8 @@
 /**index.wxss**/
 
-page {
+.container {
     padding: 10rpx;
-    font-size: large;
+}
+.order-list {
+    width: 100%;
 }

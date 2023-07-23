@@ -20,12 +20,12 @@ Page({
         this.setData({imageList, category});
     },
     jumpTo(event) {
-        const type = event.target.dataset.type;
-        if (type.includes('更多')) {
+        const {label, key} = event.target.dataset;
+        if (label.includes('更多')) {
             wx.switchTab({url: '/pages/category/index'});
         }
         else {
-            wx.navigateTo({url: `/pages/detail/index?category=${event.target.dataset.type}`});
+            wx.navigateTo({url: `/pages/detail/index?key=${key}&label=${label}`});
         }
     }
 });

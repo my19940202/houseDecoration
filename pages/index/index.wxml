@@ -10,8 +10,7 @@
     <t-grid class="category-wrapper" column="{{4}}" theme="card">
         <t-grid-item
             wx:for="{{category}}" wx:key="index" text="{{item.label}}" image="{{item.image || defImg}}"
-            bindclick="jumpTo"
-            data-type="{{item.label}}"
+            bindclick="jumpTo" data-label="{{item.label}}" data-key="{{item.key}}"
         >
         </t-grid-item>
     </t-grid>

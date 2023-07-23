@@ -1,5 +1,6 @@
 {
     "enablePullDownRefresh": true,
     "backgroundTextStyle": "dark",
-    "navigationBarTextStyle": "white"
+    "navigationBarTextStyle": "white",
+    "navigationBarTitleText": "我的订单"
 }

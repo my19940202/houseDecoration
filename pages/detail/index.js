@@ -2,24 +2,22 @@
 import Message from 'tdesign-miniprogram/message/index';
 Page({
     data: {
-        category: '',
+        category: {},
         name: '',
         phone: '',
         text: ''
     },
     onLoad(options) {
-        this.setData({
-            category: options.category
-        });
-        // 获取全局变量上共享的环境获取数据
+        this.setData({category: options});
+        // 从全局变量的共享云环境查询数据
         var appInstance = getApp();
         this.db = appInstance.globalData.wxCloud.database();
-        this.db.collection('housing_forms').get().then(res => {
-            console.log(res.data)
-            this.setData({
-                list: res.data
-            });
-        })
+        // this.db.collection('housing_forms').get().then(res => {
+        //     console.log(res.data)
+        //     this.setData({
+        //         list: res.data
+        //     });
+        // })
     },
     setFormData(event) {
         console.log('event', event);

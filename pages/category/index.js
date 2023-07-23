@@ -47,8 +47,7 @@ Page({
         }
     },
     jumpTo(event) {
-        wx.navigateTo({
-            url: `/pages/detail/index?category=${event.target.dataset.type}`
-        });
+        const {label, key} = event.target.dataset;
+        wx.navigateTo({url: `/pages/detail/index?key=${key}&label=${label}`});
     }
 });
