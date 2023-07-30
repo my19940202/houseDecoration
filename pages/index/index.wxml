@@ -11,7 +11,7 @@
         <t-grid-item
             wx:for="{{category}}" wx:key="index" text="{{item.label}}" image="{{item.image || defImg}}"
             jump-type="navigate-to"
-            url="/pages/detail/index?key={{item.key}}&label={{item.label}}"
+            url="{{item.url}}"
         >
         </t-grid-item>
     </t-grid>

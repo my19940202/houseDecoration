@@ -18,7 +18,7 @@
                     text="{{element.label}}"
                     image="{{element.image || defImg}}"
                     jump-type="navigate-to"
-                    url="/pages/detail/index?key={{item.key}}&label={{item.label}}"
+                    url="/pages/detail/index?key={{element.key}}&label={{element.label}}"
                 >
                 </t-grid-item>
                 </block>

@@ -12,8 +12,15 @@ Page({
     },
     init(imageList, category) {
         category = [
-            ...category.slice(0, 7).map(item => item.items[0]),
-            {label: '立即预约', image: bookImg}
+            ...category.slice(0, 7).map(item => ({
+                ...item.items[0],
+                url: `/pages/detail/index?key=${item.items[0].key}&label=${item.items[0].label}`
+            })),
+            {
+                label: '立即预约',
+                image: bookImg,
+                url: '/pages/cart/index'
+            }
         ];
         this.setData({imageList, category});
     }

@@ -1,4 +1,4 @@
-// index.js
+// 详情页
 import Message from 'tdesign-miniprogram/message/index';
 const app = getApp();
 Page({
@@ -25,6 +25,8 @@ Page({
                 });
             }
         });
+        // 动态更新详情页的标题
+        options.label && wx.setNavigationBarTitle({title: options.label});
     },
     setFormData(event) {
         const key = event.target.dataset.label;
@@ -59,7 +61,14 @@ Page({
             }
         })
     },
-    handleClick() {
-        console.log('fuck you shop cart');
+    handleBtmBarClick(event) {
+        const type = event.target.dataset.type;
+        if (type === 'cart') {
+            wx.navigateTo({url: '/pages/cart/index'});
+        }
+        if (type === 'add') {
+            // 临时存储选中的购物车信息
+            console.log(this.data.category, 'this.data');
+        }
     }
 });

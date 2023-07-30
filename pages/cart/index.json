@@ -2,6 +2,7 @@
     "navigationBarBackgroundColor": "#07c160",
     "backgroundTextStyle": "dark",
     "navigationBarTextStyle": "white",
+    "navigationBarTitleText": "我的购物车",
     "usingComponents": {
         "t-input": "tdesign-miniprogram/input/input",
         "t-button": "tdesign-miniprogram/button/button"
