@@ -1,9 +1,3 @@
-/**index.wxss**/
-
-page {
-  padding: 0 5rpx;
-  background-color: #f6f6f6;
-}
 .title {
     font-size: larger ;
     color: black;
@@ -14,4 +8,33 @@ page {
 .submit {
   margin-top: 30rpx;
   text-align: center;
+}
+.cart-textarea {
+    height: 250rpx;
+    overflow: hidden;
+    background-color: #fff;
+}
+.content .t-button {
+    background-color: #07c160;
+}
+.popup-wrapper {
+    color: #333;
+    width: 80%;
+    height: 100%;
+}
+.popup-wrapper .t-tree-select {
+    width: 100%;
+    height: 85vh!important;
+}
+.popup-wrapper .tree-btm-bar {
+    width: 100%;
+    height: 15vh;
+}
+.popup-wrapper .tree-btm-bar .t-button {
+    border: 1px solid #07c160;
+    color: #07c160;
+    border-radius: 30rpx;
+}
+.popup-wrapper .tree-btm-bar .t-tag {
+    margin: 4rpx;
 }

@@ -1,28 +1,38 @@
 <view class="container">
-    <!--
-        <view class="milestone-wrapper">
-            <block wx:if="{{!hasUserInfo}}">
-                <button wx:if="{{canIUseGetUserProfile}}" bindtap="getUserProfile"> 获取头像昵称 </button>
-                <button wx:else open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
-            </block>
-            <block wx:else>
-                <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
-                <text class="userinfo-nickname">{{userInfo.nickName}}</text>
-            </block>
-        </view>
-        -->
-    <text class="title">预约咨询表单</text>
     <view class="content">
-        <t-input label="您的姓名" bindchange="setFormData" data-label="name" value="{{name}}" placeholder="请输入文字"></t-input>
-        <t-input label="您的电话" bindchange="setFormData" data-label="phone" value="{{phone}}" placeholder="请输入文字" />
-        <t-input label="咨询内容" bindchange="setFormData" data-label="text" value="{{text}}" placeholder="请输入文字" />
+        <t-input label="姓名(必填)" bindchange="setFormData" data-label="name" value="{{name}}" placeholder="请输入您的姓名">
+            <t-button slot="suffix" theme="primary" open-type="getUserInfo" size="extra-small" bindtap="getUserProfile">使用昵称</t-button>
+        </t-input>
+        <t-input label="服务(必填)" bindchange="setFormData" data-label="type" value="{{service}}" placeholder="点击选择需要的服务">
+            <t-button slot="suffix" theme="primary" size="extra-small" bindtap="handlePopup">选择服务</t-button>
+        </t-input>
+        <t-input label="电话(可选)" bindchange="setFormData" type="digit" data-label="phone" value="{{phone}}" placeholder="请输入您的电话">
+        </t-input>
+        <t-textarea label="备注(可选)" t-class="cart-textarea" placeholder="请输入备注内容" bindchange="setFormData" data-label="text" value="{{text}}" />
         <view class="submit">
             <t-button bindtap="submitForm" slot="suffix" theme="primary">提交预约</t-button>
         </view>
     </view>
+    <t-popup
+        visible="{{popup.visible}}"
+        class="popup-wrapper"
+        bind:visible-change="onVisibleChange"
+        placement="left"
+    >
+        <t-tree-select options="{{category}}" value="{{popup.value}}" multiple bind:change="onTreeSelect" />
+        <view class="tree-btm-bar">
+            <t-row>
+                <t-tag wx:for="{{popup.selectedCategory}}" wx:key="index" wx:for-item="element">{{element}}</t-tag>
+            </t-row>
+            <t-row>
+                <t-button size="small" bindtap="handleBtmBarClick" data-type="reset" variant="outline">
+                    清空
+                </t-button>
+                <t-button size="small" bindtap="handleBtmBarClick" data-type="add" variant="outline">
+                    确认
+                </t-button>
+            </t-row>
+        </view>
+    </t-popup>
     <text class="title">表单提交结果</text>
-    <view class="content" wx:for="{{list}}">
-        <text>{{index+1}}</text>: 
-        <text>{{item.name}}</text> <text>{{item.phone}}</text> <text>{{item.text}}</text>
-    </view>
 </view>

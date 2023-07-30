@@ -5,6 +5,12 @@
     "navigationBarTitleText": "我的购物车",
     "usingComponents": {
         "t-input": "tdesign-miniprogram/input/input",
-        "t-button": "tdesign-miniprogram/button/button"
+        "t-textarea": "tdesign-miniprogram/textarea/textarea",
+        "t-tree-select": "tdesign-miniprogram/tree-select/tree-select",
+        "t-button": "tdesign-miniprogram/button/button",
+        "t-popup": "tdesign-miniprogram/popup/popup",
+        "t-col": "tdesign-miniprogram/col/col",
+        "t-row": "tdesign-miniprogram/row/row",
+        "t-tag": "tdesign-miniprogram/tag/tag"
     }
 }

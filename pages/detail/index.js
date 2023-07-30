@@ -69,6 +69,7 @@ Page({
         if (type === 'add') {
             // 临时存储选中的购物车信息
             console.log(this.data.category, 'this.data');
+            app.globalData.cart.push(this.data.category);
         }
     }
 });
