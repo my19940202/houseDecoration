@@ -17,9 +17,8 @@
                 <t-grid-item
                     text="{{element.label}}"
                     image="{{element.image || defImg}}"
-                    bindtap="jumpTo"
-                    data-label="{{element.label}}" data-key="{{element.key}}"
-                    image-props="{{ { shape: 'round', lazy: true } }}"
+                    jump-type="navigate-to"
+                    url="/pages/detail/index?key={{item.key}}&label={{item.label}}"
                 >
                 </t-grid-item>
                 </block>

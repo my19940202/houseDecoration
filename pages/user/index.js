@@ -28,10 +28,5 @@ Page({
         userInfo: e.detail.userInfo,
         hasUserInfo: true
       })
-    },
-    jumpTo(event) {
-        wx.navigateTo({
-            url: `/pages/${event.target.dataset.path}/index`
-        });
     }
 })

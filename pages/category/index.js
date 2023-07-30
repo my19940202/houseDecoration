@@ -45,10 +45,5 @@ Page({
         if (index > -1) {
             this.setData({ sideBarIndex: index });
         }
-    },
-    jumpTo(event) {
-        const {label, key} = event.target.dataset;
-        console.log(event.target.dataset, 'event.target.dataset');
-        wx.navigateTo({url: `/pages/detail/index?key=${key}&label=${label}`});
     }
 });
