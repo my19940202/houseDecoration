@@ -1,20 +1,9 @@
 <view class="container">
     <view class="userinfo">
         <view class="milestone-wrapper">
-            <t-cell title="我的订单" bindtap="jumpTo" data-path="order" hover arrow />
-            <t-cell title="关于我们" bindtap="jumpTo" data-path="about" hover arrow />
+            <t-cell leftIcon="cart" title="我的购物车" bindtap="jumpTo" data-path="cart" hover arrow />
+            <t-cell leftIcon="shop" title="我的订单" bindtap="jumpTo" data-path="order" hover arrow />
+            <t-cell leftIcon="ellipsis" title="关于我们" bindtap="jumpTo" data-path="about" hover arrow />
         </view>
-        <!--
-        <view class="milestone-wrapper">
-            <block wx:if="{{!hasUserInfo}}">
-                <button wx:if="{{canIUseGetUserProfile}}" bindtap="getUserProfile"> 获取头像昵称 </button>
-                <button wx:else open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
-            </block>
-            <block wx:else>
-                <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
-                <text class="userinfo-nickname">{{userInfo.nickName}}</text>
-            </block>
-        </view>
-        -->
     </view>
 </view>

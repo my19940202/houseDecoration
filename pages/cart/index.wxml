@@ -1,4 +1,16 @@
 <view class="container">
+    <!--
+        <view class="milestone-wrapper">
+            <block wx:if="{{!hasUserInfo}}">
+                <button wx:if="{{canIUseGetUserProfile}}" bindtap="getUserProfile"> 获取头像昵称 </button>
+                <button wx:else open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
+            </block>
+            <block wx:else>
+                <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+                <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+            </block>
+        </view>
+        -->
     <text class="title">预约咨询表单</text>
     <view class="content">
         <t-input label="您的姓名" bindchange="setFormData" data-label="name" value="{{name}}" placeholder="请输入文字"></t-input>

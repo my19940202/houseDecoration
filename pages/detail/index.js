@@ -58,5 +58,8 @@ Page({
                 });
             }
         })
+    },
+    handleClick() {
+        console.log('fuck you shop cart');
     }
 });

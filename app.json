@@ -4,7 +4,7 @@
         "pages/category/index",
         "pages/detail/index",
         "pages/user/index",
-        "pages/form/index",
+        "pages/cart/index",
         "pages/about/index",
         "pages/order/index"
     ],

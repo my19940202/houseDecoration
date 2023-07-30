@@ -5,12 +5,9 @@
     </view>
     <view class="content">
         <t-cell leftIcon="bulletpoint" title="介绍" description="{{detail.text}}"></t-cell>
-        <t-cell leftIcon="books" title="预约"></t-cell>
-        <t-input label="您的姓名" bindchange="setFormData" data-label="name" value="{{name}}" placeholder="请输入文字"></t-input>
-        <t-input label="您的电话" bindchange="setFormData" data-label="phone" value="{{phone}}" placeholder="请输入文字" />
-        <t-input label="咨询内容" bindchange="setFormData" data-label="text" value="{{text}}" placeholder="请输入文字" />
-        <view class="submit">
-            <t-button bindtap="submitForm" slot="suffix" style="background-color:#07c160;color:#fff;">提交预约</t-button>
-        </view>
+    </view>
+    <view class="bottom-bar">
+        <t-button class="left" bindtap="handleClick" icon="cart" variant="outline">我的购物车</t-button>
+        <t-button class="right" bindtap="handleClick" icon="add" variant="outline">加入购物车</t-button>
     </view>
 </view>
