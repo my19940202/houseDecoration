@@ -2,6 +2,14 @@
 import {showMessage, formatCheckBoxOptions} from '../../utils/index.js';
 // 获取全局变量上共享的环境获取数据
 const app = getApp();
+
+const options = formatCheckBoxOptions(app && app.globalData && app.globalData.category);
+const service_name = options.map(ele => {
+    if (app.globalData.cart.includes(ele.value)) {
+        return ele.label;
+    }
+}).filter(e => !!e);
+
 Page({
     data: {
         // 名称
@@ -11,9 +19,9 @@ Page({
         // 备注
         notes: '',
         // 选择的服务
-        service: [],
-        avatarUrl: '',
-        options: formatCheckBoxOptions(app && app.globalData && app.globalData.category)
+        service: app.globalData.cart || [],
+        service_name,
+        options
     },
     onLoad() {
         this.db = app.globalData.wxCloud.database();
@@ -26,9 +34,13 @@ Page({
         });
     },
     handleCheckbox(event) {
-        this.setData({
-            service: event.detail.value,
-        });
+        const service = event.detail.value;
+        const service_name = this.data.options.map(ele => {
+            if (service.includes(ele.value)) {
+                return ele.label;
+            }
+        }).filter(e => !!e);
+        this.setData({service, service_name});
     },
     submitForm() {
         const me = this;

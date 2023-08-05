@@ -1,4 +1,5 @@
 <view class="container">
+    <t-message id="t-message" />
     <view class="swiper-wrapper">
         <t-swiper height="350" image-props="{{ {mode: 'heightFix'} }}" list="{{detail.images}}"  navigation="{{ {type: 'dots-bar'} }}">
         </t-swiper>

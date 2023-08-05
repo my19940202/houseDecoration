@@ -1,5 +1,5 @@
 // 详情页
-import Message from 'tdesign-miniprogram/message/index';
+import {showMessage} from '../../utils/index.js';
 const app = getApp();
 Page({
     data: {
@@ -38,38 +38,18 @@ Page({
             }
         });
     },
-    submitForm() {
-        const {name, phone, text} = this.data.form;
-        this.db.collection('housing_forms').add({
-            // data 字段表示需新增的 JSON 数据
-            data: {name, phone, text},
-            success: function(res) {
-                Message.info({
-                    context: this,
-                    offset: [20, 32],
-                    duration: 3000,
-                    content: '提交成功',
-                });
-            },
-            fail: function(err) {
-                Message.error({
-                    context: this,
-                    offset: [20, 32],
-                    duration: 3000,
-                    content: '提交失败',
-                });
-            }
-        })
-    },
     handleBtmBarClick(event) {
         const type = event.target.dataset.type;
+        const {key, label} = this.data.category;
         if (type === 'cart') {
             wx.navigateTo({url: '/pages/cart/index'});
         }
         if (type === 'add') {
             // 临时存储选中的购物车信息
-            console.log(this.data.category, 'this.data');
-            app.globalData.cart.push(this.data.category);
+            if (!app.globalData.cart.includes(key)) {
+                app.globalData.cart.push(key);
+                showMessage('success', this, `${label}已加入购物车`);
+            }
         }
     }
 });
