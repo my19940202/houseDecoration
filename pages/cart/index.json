@@ -6,11 +6,9 @@
     "usingComponents": {
         "t-input": "tdesign-miniprogram/input/input",
         "t-textarea": "tdesign-miniprogram/textarea/textarea",
-        "t-tree-select": "tdesign-miniprogram/tree-select/tree-select",
         "t-button": "tdesign-miniprogram/button/button",
-        "t-popup": "tdesign-miniprogram/popup/popup",
-        "t-col": "tdesign-miniprogram/col/col",
-        "t-row": "tdesign-miniprogram/row/row",
-        "t-tag": "tdesign-miniprogram/tag/tag"
+        "t-checkbox-group": "tdesign-miniprogram/checkbox-group/checkbox-group",
+        "t-checkbox": "tdesign-miniprogram/checkbox/checkbox",
+        "t-message": "tdesign-miniprogram/message/message"
     }
 }

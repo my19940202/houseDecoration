@@ -17,24 +17,25 @@
 .content .t-button {
     background-color: #07c160;
 }
-.popup-wrapper {
-    color: #333;
-    width: 80%;
+.content .checkbox-label {
+    padding-left: 20rpx;
+}
+.content .checkbox-wrapper {
+    width: 100%;
+    height: 500rpx;
+    margin-top: 10rpx;
+    border-bottom: 1rpx solid #ccc;
+}
+.content .checkbox-wrapper scroll-view {
     height: 100%;
+    background-color: #FFF;
 }
-.popup-wrapper .t-tree-select {
-    width: 100%;
-    height: 85vh!important;
-}
-.popup-wrapper .tree-btm-bar {
-    width: 100%;
-    height: 15vh;
-}
-.popup-wrapper .tree-btm-bar .t-button {
-    border: 1px solid #07c160;
-    color: #07c160;
-    border-radius: 30rpx;
-}
-.popup-wrapper .tree-btm-bar .t-tag {
-    margin: 4rpx;
+.content .checkbox-wrapper .box {
+    display: flex;
+    flex-wrap: wrap;
+}  
+.content .checkbox-wrapper .box .t-checkbox-option {
+    display: block!important;
+    width: 49%!important;
+    height: 90rpx;
 }
