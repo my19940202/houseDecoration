@@ -4,7 +4,8 @@
         <text class="checkbox-label">服务(必填)</text>
         <view class="checkbox-wrapper">
             <scroll-view scroll-y="true" style="height: 500rpx;">
-                <t-checkbox-group borderless t-class="box" options="{{options}}" bind:change="handleCheckbox" />
+                <text>已选服务: {{service_name}}</text>
+                <t-checkbox-group value="{{service}}" borderless t-class="box" options="{{options}}" bind:change="handleCheckbox" />
             </scroll-view>
         </view>
         <t-input label="姓名(必填)" type="nickname" bindchange="setFormData" data-label="name" value="{{name}}" placeholder="请输入您的姓名">
