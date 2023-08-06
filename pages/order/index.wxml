@@ -1,8 +1,19 @@
 <view class="container">
-    <view class="order-list">
-        <t-cell wx:for="{{list}}" wx:key="_id" 
-            title="{{item.idx + '. ' + item.name}}"
-            description="{{item.phone + item.text + item._openid}}">
-        </t-cell>
+    <view class="order-wrapper">
+        <view class="order-item" wx:for="{{list}}" wx:key="index">
+            <t-divider content="{{item.create_time}}" align="left" />
+            <t-tag icon="call" wx:if="{{item.phone}}" variant="outline">{{item.phone}}</t-tag>
+            <t-tag icon="user" wx:if="{{item.name}}" variant="outline">{{item.name}}</t-tag>
+            <view>
+                <t-tag icon="books" variant="outline" >选择服务{{item.service_name.length}}项:</t-tag>
+                <t-tag wx:for="{{item.service_name}}" variant="light" wx:for-item="element" wx:key="element">
+                    {{element}}
+                </t-tag>
+            </view>
+            <view wx:if="{{item.notes}}" class="order-notes">
+                <t-tag variant="outline" icon="view-column">备注</t-tag>
+                <t-tag variant="light">{{item.notes}}</t-tag>
+            </view>
+        </view>
     </view>
 </view>

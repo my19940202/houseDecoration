@@ -1,12 +1,6 @@
 //  工具类函数
 import Message from 'tdesign-miniprogram/message';
 
-const testText = 'xxxx';
-
-function firstFetch(cb) {
-    return testText;
-}
-
 // 侧边栏数据转树状菜单数据
 function formatTreeSelectOptions(data) {
     const ret = data.map((element, index) => {
@@ -54,9 +48,29 @@ function showMessage(type, context, msg) {
     }
 }
 
+function getDateStr() {
+    const current = new Date();
+    const date = current.toISOString().substr(0, 10);
+    const time = current.toLocaleString().slice(-8);
+    return date + ' ' + time;
+}
+
+// 选择的服务keys map到中文名
+function mapKeysToLabel(list, keys) {
+    const ret = [];
+    list.forEach(ele => {
+        if (keys.includes(ele.value)) {
+            ret.push(ele.label);
+        }
+    });
+    return ret;
+}
+
 module.exports = {
     formatTreeSelectOptions,
     formatCheckBoxOptions,
-    showMessage
+    showMessage,
+    getDateStr,
+    mapKeysToLabel
 };
   

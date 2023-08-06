@@ -1,14 +1,9 @@
 // 购物车页面
-import {showMessage, formatCheckBoxOptions} from '../../utils/index.js';
+import {showMessage, formatCheckBoxOptions, getDateStr, mapKeysToLabel} from '../../utils/index.js';
 // 获取全局变量上共享的环境获取数据
 const app = getApp();
-
 const options = formatCheckBoxOptions(app && app.globalData && app.globalData.category);
-const service_name = options.map(ele => {
-    if (app.globalData.cart.includes(ele.value)) {
-        return ele.label;
-    }
-}).filter(e => !!e);
+const service_name = mapKeysToLabel(options, app.globalData.cart);
 
 Page({
     data: {
@@ -35,17 +30,17 @@ Page({
     },
     handleCheckbox(event) {
         const service = event.detail.value;
-        const service_name = this.data.options.map(ele => {
-            if (service.includes(ele.value)) {
-                return ele.label;
-            }
-        }).filter(e => !!e);
-        this.setData({service, service_name});
+        this.setData({
+            service,
+            service_name: mapKeysToLabel(this.data.options, service)
+        });
     },
     submitForm() {
         const me = this;
         const {name, phone, service, notes} = me.data;
-        const formData = {name, phone, service, notes};
+        const formData = {
+            name, phone, service, notes, create_time: getDateStr()
+        };
 
         if (name && service.length > 0) {
             me.db.collection('housing_forms').add({

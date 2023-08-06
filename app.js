@@ -18,16 +18,19 @@ App({
         const db = me.globalData.wxCloud.database();
         const curPage = getCurrentPages();
         const type = {
-            $in: ['index_poster', 'category']
+            $in: ['index_poster', 'category', 'admin_users']
         };
 
         db.collection('housing_configs').get({type}).then(res => {
             // 组件通信
             const configData = res.data || [];
-            if (configData && configData[0] && configData[1]) {
+            if (configData && configData[0] && configData[1] && configData[2]) {
                 const imageList = configData[0].images;
                 const category = configData[1].list;
-                me.globalData = {...me.globalData, category, imageList, cart: []};
+                const adminList = configData[2].list;
+                me.globalData = {
+                    ...me.globalData, category, imageList, cart: [], adminList
+                };
                 curPage[0].init(imageList, category);
             };
         });
@@ -37,8 +40,9 @@ App({
             name: 'helloworld',
             success: function(res) {
                 const {appId, openId} = res.result && res.result.event && res.result.event.userInfo;
+                const isAdmin = me.globalData.adminList && me.globalData.adminList.includes(openId);
                 me.globalData = {
-                    ...me.globalData, appId, openId
+                    ...me.globalData, appId, openId, isAdmin
                 };
             }
         })
