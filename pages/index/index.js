@@ -19,7 +19,7 @@ Page({
             {
                 label: '立即预约',
                 image: bookImg,
-                url: '/pages/cart/index'
+                url: '/pages/cart/index?type=index'
             }
         ];
         this.setData({imageList, category});

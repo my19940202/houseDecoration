@@ -1,7 +1,7 @@
 <view class="container">
     <view class="order-wrapper">
         <view class="order-item" wx:for="{{list}}" wx:key="index">
-            <t-divider content="{{item.create_time}}" align="left" />
+            <t-divider content="{{index + 1}}: {{item.create_time}}" align="left" />
             <t-tag icon="call" wx:if="{{item.phone}}" variant="outline">{{item.phone}}</t-tag>
             <t-tag icon="user" wx:if="{{item.name}}" variant="outline">{{item.name}}</t-tag>
             <view>

@@ -2,7 +2,7 @@
 import {showMessage, formatCheckBoxOptions, getDateStr, mapKeysToLabel} from '../../utils/index.js';
 // 获取全局变量上共享的环境获取数据
 const app = getApp();
-const options = formatCheckBoxOptions(app && app.globalData && app.globalData.category);
+const {deepOptions: options, shallowOptions} = formatCheckBoxOptions(app && app.globalData && app.globalData.category);
 const service_name = mapKeysToLabel(options, app.globalData.cart);
 
 Page({
@@ -16,10 +16,17 @@ Page({
         // 选择的服务
         service: app.globalData.cart || [],
         service_name,
-        options
+        options,
+        conf: {}
     },
-    onLoad() {
+    onLoad(conf) {
         this.db = app.globalData.wxCloud.database();
+        // 如果是首页跳转, 服务checkbox使用一级目录(假定首页跳转是需求不明确的用户，二级目录是需求明确的用户)
+        if (conf.type === 'index') {
+            this.setData({
+                options: shallowOptions
+            });
+        }
     },
     setFormData(event) {
         const key = event.target.dataset.label;

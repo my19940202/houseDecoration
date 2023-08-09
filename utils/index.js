@@ -21,16 +21,18 @@ function formatTreeSelectOptions(data) {
 
 // 侧边栏数据转checkbox多选菜单
 function formatCheckBoxOptions(data) {
-    const ret = [];
-    data.map((element, index) => {
+    const deepOptions = [];
+    const shallowOptions = [];
+    data.map(element => {
         let {items} = element;
-        items = items.map((ele, idx) => ({
-            label: ele.label,
-            value: ele.key
-        }));
-        ret.push(...items);
+        if (!element.title.includes('其他')) {
+            shallowOptions.push({label: element.title, value: element.title});   
+        }
+
+        items = items.map((ele, idx) => ({label: ele.label, value: ele.key}));
+        deepOptions.push(...items);
     });
-    return ret;
+    return {deepOptions, shallowOptions};
 }
 
 function showMessage(type, context, msg) {
