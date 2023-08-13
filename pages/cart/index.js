@@ -3,7 +3,6 @@ import {showMessage, formatCheckBoxOptions, getDateStr, mapKeysToLabel} from '..
 // 获取全局变量上共享的环境获取数据
 const app = getApp();
 const {deepOptions: options, shallowOptions} = formatCheckBoxOptions(app && app.globalData && app.globalData.category);
-const service_name = mapKeysToLabel(options, app.globalData.cart);
 
 Page({
     data: {
@@ -13,11 +12,11 @@ Page({
         notes: '', // 备注
         area: '', // 小区
         room_no: '', // 楼号
-        service_name,
         options,
         conf: {}
     },
     onLoad(conf) {
+        const service_name = mapKeysToLabel(options, app.globalData.cart);
         this.db = app.globalData.wxCloud.database();
         // 如果是首页跳转, 服务checkbox使用一级目录(假定首页跳转是需求不明确的用户，二级目录是需求明确的用户)
         if (conf.type === 'index') {
@@ -25,6 +24,9 @@ Page({
                 conf,
                 options: shallowOptions
             });
+        }
+        else {
+            this.setData({service_name});
         }
     },
     setFormData(event) {
