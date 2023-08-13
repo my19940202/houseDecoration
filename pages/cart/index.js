@@ -7,14 +7,12 @@ const service_name = mapKeysToLabel(options, app.globalData.cart);
 
 Page({
     data: {
-        // 名称
-        name: '',
-        // 电话
-        phone: '',
-        // 备注
-        notes: '',
-        // 选择的服务
-        service: app.globalData.cart || [],
+        service: app.globalData.cart || [], // 选择的服务
+        name: '', // 姓名
+        phone: '', // 电话
+        notes: '', // 备注
+        area: '', // 小区
+        room_no: '', // 楼号
         service_name,
         options,
         conf: {}
@@ -24,6 +22,7 @@ Page({
         // 如果是首页跳转, 服务checkbox使用一级目录(假定首页跳转是需求不明确的用户，二级目录是需求明确的用户)
         if (conf.type === 'index') {
             this.setData({
+                conf,
                 options: shallowOptions
             });
         }
@@ -44,9 +43,11 @@ Page({
     },
     submitForm() {
         const me = this;
-        const {name, phone, service, notes} = me.data;
+        const {conf, name, phone, service, notes, area, room_no} = me.data;
         const formData = {
-            name, phone, service, notes, create_time: getDateStr()
+            type: conf.type === 'index' ? 'from_index' : 'from_detail',
+            name, phone, service, notes, area, room_no,
+            create_time: getDateStr()
         };
 
         if (name && service.length > 0) {
@@ -57,9 +58,7 @@ Page({
                     showMessage('success', me, '提交成功自动跳转订单列表(刘师傅将稍后联系您)');
                     setTimeout(() => {
                         wx.navigateTo({url: '/pages/order/index'});
-                        me.setData({
-                            name: '', phone: '', service: [], notes: ''
-                        });
+                        me.setData({name: '', phone: '', service: [], notes: ''});
                     }, 3000)
                 },
                 fail: function(err) {
@@ -67,8 +66,7 @@ Page({
                 }
             });
         } else {
-            let tips = !service.length ? '服务' : (!name ? '姓名': '');
-            showMessage('error', me, `请完善${tips}信息后再提交`);
+            showMessage('error', me, '请完善信息后再提交');
         }
     }
 });

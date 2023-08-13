@@ -9,8 +9,8 @@
             </scroll-view>
         </view>
         <t-input label="姓名(必填)" type="nickname" bindchange="setFormData" data-label="name" value="{{name}}" placeholder="请输入您的姓名" />
-        <t-input label="小区名(必填)" type="text" bindchange="setFormData" data-label="area" value="{{area}}" placeholder="请输入您的小区名称" />
-        <t-input label="楼号(必填)" type="text" bindchange="setFormData" data-label="room_number" value="{{room_number}}" placeholder="请输入房屋的楼号" />
+        <t-input label="小区(必填)" type="text" bindchange="setFormData" data-label="area" value="{{area}}" placeholder="请输入您小区的名称" />
+        <t-input label="楼号(必填)" type="text" bindchange="setFormData" data-label="room_no" value="{{room_no}}" placeholder="请输入您房屋的楼号" />
         <t-input label="电话(可选)" bindchange="setFormData" type="digit" data-label="phone" value="{{phone}}" placeholder="请输入您的电话" />
         <t-textarea label="备注(可选)" t-class="cart-textarea" placeholder="请输入备注内容" bindchange="setFormData" data-label="notes" value="{{notes}}" />
         <view class="submit">

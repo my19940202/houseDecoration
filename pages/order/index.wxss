@@ -11,6 +11,9 @@
     padding: 0 15rpx;
     margin-bottom: 5rpx;
 }
+.order-wrapper .order-item .t-tag {
+    margin-right: 4rpx;
+}
 .order-wrapper .order-item .order-item-title {
     font-weight: bolder;
 }
