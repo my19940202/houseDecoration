@@ -1,8 +1,6 @@
 <view class="container">
     <view class="swiper-wrapper">
-        <t-swiper
-            height="240"
-            list="{{imageList}}"
+        <t-swiper height="240" list="{{imageList}}"
         >
         </t-swiper>
     </view>

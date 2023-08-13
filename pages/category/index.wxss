@@ -7,6 +7,7 @@ page .round-image {
 .side-bar-wrapper {
     display: flex;
     height: 100vh;
+    --td-side-bar-active-color: #07c160;
 }
 .side-bar-wrapper .content {
     flex: 1;

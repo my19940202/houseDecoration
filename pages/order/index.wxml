@@ -2,7 +2,11 @@
     <view class="order-wrapper">
         <view class="order-item" wx:for="{{list}}" wx:key="index">
             <t-divider content="{{index + 1}}: {{item.create_time}}" align="left" />
-            <t-tag theme="{{isAdmin ? 'warning': ''}}" icon="user" wx:if="{{item.name}}" variant="outline">{{item.name}}</t-tag>
+            <t-tag
+                theme="{{item.is_admin ? 'warning': ''}}"
+                icon="user" wx:if="{{item.name}}" variant="outline">
+                {{item.is_admin ? '超管:': ''}}{{item.name}}
+            </t-tag>
             <t-tag icon="call" wx:if="{{item.phone}}" variant="outline">{{item.phone}}</t-tag>
             <t-tag icon="location" wx:if="{{item.area}}" variant="outline">{{item.area}} {{item.room_no}}</t-tag>
             <view>

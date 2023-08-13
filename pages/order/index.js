@@ -7,8 +7,7 @@ const {wxCloud, openId: _openid, isAdmin} = app.globalData;
 
 Page({
     data: {
-        list: [],
-        isAdmin
+        list: []
     },
     onLoad() {
         const condition = isAdmin ? {} : {_openid};
@@ -24,6 +23,7 @@ Page({
                                 ? item.service : mapKeysToLabel(deepOptions, item.service);
                             return {
                                 service_name,
+                                is_admin: _openid === item._openid,
                                 ...item
                             }
                         })

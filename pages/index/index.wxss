@@ -2,6 +2,7 @@
 .swiper-wrapper {
     width: 100%;
     height: auto;
+    --td-swiper-radius: 0;
 }
 .category-wrapper {
     margin-top: 32rpx;
