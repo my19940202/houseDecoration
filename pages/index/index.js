@@ -10,6 +10,15 @@ Page({
     onLoad() {
         // 初始化
     },
+    // 支持分享小程序
+    onShareAppMessage() {
+        return { 
+            title: '刘师傅一站式家装',
+            path: '/pages/index/index' ,
+            success: function (res) {},
+            fail: function (res) {}
+        }
+    },
     init(imageList, category) {
         category = [
             ...category.slice(0, 7).map(item => ({
@@ -23,5 +32,10 @@ Page({
             }
         ];
         this.setData({imageList, category});
+    },
+   onShareTimeline: function() {
+        return {
+            title: '刘师傅一站式家装',
+        }
     }
 });
