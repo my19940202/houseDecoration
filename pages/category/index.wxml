@@ -1,4 +1,5 @@
 <view class="side-bar-wrapper">
+    <t-message id="t-message" />
     <t-side-bar value="{{sideBarIndex}}" bind:change="onSideBarChange">
         <t-side-bar-item
             wx:for="{{categories}}"
@@ -12,17 +13,35 @@
         class="content" scroll-y scroll-with-animation scroll-top="{{scrollTop}}" bind:scroll="onScroll">
         <view wx:for="{{categories}}" wx:key="idx" class="section">
             <view class="title">{{item.title || item.label}}</view>
-            <t-grid column="{{3}}" border="{{false}}">
+            <!-- 老版本布局: 右侧3列 -->
+            <!-- <t-grid column="{{3}}" border="{{false}}">
                 <block wx:for="{{item.items}}" wx:key="index" wx:for-item="element">
                 <t-grid-item
                     text="{{element.label}}"
                     image="{{element.image || defImg}}"
                     jump-type="navigate-to"
+                    t-class-text="item-text"
                     url="/pages/detail/index?key={{element.key}}&label={{element.label}}&index={{idx}}-{{index}}"
                 >
                 </t-grid-item>
                 </block>
-            </t-grid>
+            </t-grid> -->
+            <!-- 新版布局: 右侧1列 -->
+            <block wx:for="{{item.items}}" wx:key="index" wx:for-item="element">
+            <!-- url="/pages/detail/index?" -->
+                <t-cell
+                    title="{{element.label}}"
+                    image="{{element.image || defImg}}"
+                    bordered="{{false}}"
+                    t-class-right-icon="cell-right-icon"
+                    t-class-title="cell-right-title"
+                    t-class-description="cell-right-description"
+                    data-query="key={{element.key}}&label={{element.label}}&index={{idx}}"
+                    bindtap="handleCellClick"
+                >
+                    <t-icon name="add" slot="right-icon" data-key="{{element.key}}" data-type="icon" />
+                </t-cell>
+            </block>
         </view>
     </scroll-view>
 </view>

@@ -3,8 +3,7 @@
         "t-input": "tdesign-miniprogram/input/input",
         "t-button": "tdesign-miniprogram/button/button",
         "t-swiper": "tdesign-miniprogram/swiper/swiper",
-        "t-swiper-nav": "tdesign-miniprogram/swiper-nav/swiper-nav",
-        "t-message": "tdesign-miniprogram/message/message"
+        "t-swiper-nav": "tdesign-miniprogram/swiper-nav/swiper-nav"
     },
     "backgroundTextStyle": "dark"
 }

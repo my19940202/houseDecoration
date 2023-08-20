@@ -1,4 +1,5 @@
 import {defImg} from './../../constant/index.js';
+import {showMessage} from '../../utils/index.js';
 const app = getApp();
 
 Page({
@@ -44,6 +45,18 @@ Page({
         const index = (this.offsetTopList || []).findIndex((top) => top > scrollTop && top - scrollTop <= threshold);
         if (index > -1) {
             this.setData({ sideBarIndex: index });
+        }
+    },
+    handleCellClick(event) {
+        const {key, query, type} = (event.target.dataset || {});
+        if (type === 'icon') {
+            if (!app.globalData.cart.includes(key)) {
+                app.globalData.cart.push(key);
+                showMessage('success', this, '已加入购物车');
+            }
+        }
+        else {
+            wx.navigateTo({url: `/pages/detail/index?${query}`});
         }
     }
 });

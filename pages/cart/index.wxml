@@ -3,8 +3,8 @@
     <view class="content">
         <text class="checkbox-label">服务(必填)</text>
         <view class="checkbox-wrapper">
-            <scroll-view scroll-y="true" style="height: 500rpx;">
-                <text>已选服务: {{service_name}}</text>
+            <view class="selected-text">已选服务: {{service_name}}</view>
+            <scroll-view scroll-y="true" style="height: 500rpx">
                 <t-checkbox-group value="{{service}}" borderless t-class="box" options="{{options}}" bind:change="handleCheckbox" />
             </scroll-view>
         </view>

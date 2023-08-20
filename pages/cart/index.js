@@ -26,7 +26,10 @@ Page({
             });
         }
         else {
-            this.setData({service_name});
+            this.setData({
+                service_name,
+                service: app.globalData.cart
+            });
         }
     },
     setFormData(event) {

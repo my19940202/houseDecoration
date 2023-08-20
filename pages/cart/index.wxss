@@ -30,6 +30,10 @@
     height: 100%;
     background-color: #FFF;
 }
+.content .checkbox-wrapper .selected-text {
+    font-size: 28rpx;
+    margin-bottom: 10rpx;
+}
 .content .checkbox-wrapper .box {
     display: flex;
     flex-wrap: wrap;

@@ -1,9 +1,4 @@
-page {
-    background-color: #fff;
-}
-page .round-image {
-    border-radius: 12rpx;
-}
+
 .side-bar-wrapper {
     display: flex;
     height: 100vh;
@@ -15,6 +10,27 @@ page .round-image {
 
 .side-bar-wrapper .section {
     padding: 20rpx 0;
+}
+.section {
+    background-color: #FFF;
+}
+.section .t-class-image {
+    background-color: red;
+}
+.section .cell-right-title {
+    font-size: 28rpx;
+}
+.section .cell-right-title {
+    font-size: 28rpx;
+}
+.section .cell-right-description {
+    font-size: 26rpx;
+}
+.section .t-icon {
+    background-color: #07c160;
+    font-size: 34rpx;
+    border-radius: 17rpx;
+    color: #FFF;
 }
 
 .side-bar-wrapper .title {
