@@ -11,11 +11,15 @@ Page({
             name: '',
             phone: '',
             text: ''
-        }
+        },
+        count: 0
     },
     onLoad(options) {
         const me = this;
-        me.setData({category: options});
+        me.setData({
+            category: options,
+            count: app.globalData.cart.length
+        });
         // 从全局变量的共享云环境查询数据
         me.db = app.globalData.wxCloud.database();
         me.db.collection('housing_details').where({key: options.key}).get().then(res => {
@@ -48,6 +52,9 @@ Page({
             // 临时存储选中的购物车信息
             if (!app.globalData.cart.includes(key)) {
                 app.globalData.cart.push(key);
+                this.setData({
+                    count: this.data.count + 1
+                })
                 showMessage('success', this, `${label}已加入购物车`);
             }
         }

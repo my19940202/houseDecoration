@@ -10,9 +10,12 @@
         <t-cell leftIcon="bulletpoint" title="介绍" description="{{detail.text}}"></t-cell>
     </view>
     <view class="bottom-bar">
-        <t-button class="left" bindtap="handleBtmBarClick" data-type="cart" icon="cart" variant="outline">
-            我的购物车
-        </t-button>
+        <t-badge count="{{count}}" class="left">
+            <t-button bindtap="handleBtmBarClick" data-type="cart" icon="cart" variant="outline">
+                我的购物车
+            </t-button>
+        </t-badge>
+
         <t-button class="right" bindtap="handleBtmBarClick" data-type="add" icon="add" variant="outline">
             加入购物车
         </t-button>
