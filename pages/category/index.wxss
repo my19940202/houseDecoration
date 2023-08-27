@@ -7,6 +7,19 @@
 .side-bar-wrapper .content {
     flex: 1;
 }
+.side-bar-wrapper .leftbar {
+    --td-side-bar-height: 90%;
+}
+.side-bar-wrapper .cart {
+    height: 10%;
+    text-align: center;
+    --td-button-primary-bg-color: #FFF;
+    --td-button-primary-active-bg-color: #d1f3d0;
+    --td-button-primary-color: #07c160;
+}
+.side-bar-wrapper .cart .t-button {
+    margin-top: 10rpx;
+}
 
 .side-bar-wrapper .section {
     padding: 20rpx 0;

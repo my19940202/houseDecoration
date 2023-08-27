@@ -2,7 +2,9 @@
     "usingComponents": {
         "t-side-bar": "tdesign-miniprogram/side-bar/side-bar",
         "t-side-bar-item": "tdesign-miniprogram/side-bar-item/side-bar-item",
-        "t-icon": "tdesign-miniprogram/icon/icon"
+        "t-icon": "tdesign-miniprogram/icon/icon",
+        "t-button": "tdesign-miniprogram/button/button",
+        "t-badge": "tdesign-miniprogram/badge/badge"
     },
     "backgroundTextStyle": "dark"
 }

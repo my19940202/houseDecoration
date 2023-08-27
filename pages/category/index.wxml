@@ -1,14 +1,21 @@
 <view class="side-bar-wrapper">
     <t-message id="t-message" />
-    <t-side-bar value="{{sideBarIndex}}" bind:change="onSideBarChange">
-        <t-side-bar-item
-            wx:for="{{categories}}"
-            wx:key="index"
-            value="{{item.value || index}}"
-            label="{{item.label}}"
-            badge-props="{{item.badgeProps}}"
-        />
-    </t-side-bar>
+    <view class="leftbar">
+        <t-side-bar value="{{sideBarIndex}}" bind:change="onSideBarChange">
+            <t-side-bar-item
+                wx:for="{{categories}}"
+                wx:key="index"
+                value="{{item.value || index}}"
+                label="{{item.label}}"
+                badge-props="{{item.badgeProps}}"
+            />
+        </t-side-bar>
+        <view class="cart">
+            <t-badge count="{{count}}">
+                <t-button theme="primary" size="large" icon="cart" shape="circle" bind:tap="handleCartClick" />
+            </t-badge>
+        </view>
+    </view>
     <scroll-view
         class="content" scroll-y scroll-with-animation scroll-top="{{scrollTop}}" bind:scroll="onScroll">
         <view wx:for="{{categories}}" wx:key="idx" class="section">

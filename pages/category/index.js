@@ -8,7 +8,8 @@ Page({
         defImg,
         sideBarIndex: 0,
         scrollTop: 0,
-        categories: app.globalData.category
+        categories: app.globalData.category,
+        count: app.globalData.cart.length
     },
     onLoad(options) {
         // url传参时更新active bar
@@ -53,10 +54,14 @@ Page({
             if (!app.globalData.cart.includes(key)) {
                 app.globalData.cart.push(key);
                 showMessage('success', this, '已加入购物车');
+                this.setData({count: this.data.count + 1});
             }
         }
         else {
             wx.navigateTo({url: `/pages/detail/index?${query}`});
         }
+    },
+    handleCartClick() {
+        wx.navigateTo({url: `/pages/cart/index`});
     }
 });
