@@ -2,7 +2,7 @@
     <t-message id="t-message" />
     <view class="swiper-wrapper">
         <t-swiper height="350"
-            image-props="{{ {mode: 'heightFix'} }}"
+            image-props="{{ {mode: 'aspectFit'} }}"
             list="{{detail.images}}"  navigation="{{ {type: 'dots-bar'} }}">
         </t-swiper>
     </view>

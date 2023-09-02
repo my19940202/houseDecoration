@@ -1,11 +1,12 @@
 // 详情页
 import {showMessage} from '../../utils/index.js';
+import {defPoster} from './../../constant/index.js';
 const app = getApp();
 Page({
     data: {
         category: {},
         detail: {
-            images: app.globalData.imageList
+            images: []
         },
         form: {
             name: '',
@@ -31,6 +32,27 @@ Page({
         });
         // 动态更新详情页的标题
         options.label && wx.setNavigationBarTitle({title: options.label});
+
+        // 如果没有图片 实验菜单栏的图片作为默认图片
+        if (!me.data.detail.images.length) {
+            let targetImage = '';
+            app.globalData.category.some(ele => {
+                ele.items.some(item => {
+                    if (item.key === options.key) {
+                        targetImage = item.image;
+                    }
+                    return item.key === options.key;
+                });
+                return !!targetImage;
+            });
+
+            me.setData({
+                detail: {
+                    ...me.data.detail,
+                    images: [targetImage || defPoster]
+                }
+            });
+        }
     },
     setFormData(event) {
         const key = event.target.dataset.label;

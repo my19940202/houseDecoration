@@ -21,13 +21,13 @@ App({
             $in: ['index_poster', 'category', 'admin_users']
         };
 
-        db.collection('housing_configs').get({type}).then(res => {
+        db.collection('housing_configs').where({type}).get().then(res => {
             // 组件通信
             const configData = res.data || [];
             if (configData && configData[0] && configData[1] && configData[2]) {
                 const imageList = configData[0].images;
-                const category = configData[1].list;
-                const adminList = configData[2].list;
+                const adminList = configData[1].list;
+                const category = configData[2].list;
                 me.globalData = {
                     ...me.globalData, category, imageList, cart: [], adminList
                 };
