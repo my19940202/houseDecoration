@@ -1,9 +1,7 @@
 <view class="container">
     <view class="userinfo">
-        <view class="milestone-wrapper">
-            <t-cell leftIcon="cart" title="我的购物车" jump-type="navigateTo" url="/pages/cart/index" hover arrow />
-            <t-cell leftIcon="shop" title="我的订单" jump-type="navigateTo" url="/pages/order/index" hover arrow />
-            <t-cell leftIcon="ellipsis" title="关于我们" jump-type="navigateTo" url="/pages/about/index" hover arrow />
-        </view>
+        <t-cell leftIcon="cart" title="我的购物车" jump-type="navigateTo" url="/pages/cart/index" hover arrow />
+        <t-cell leftIcon="shop" title="我的订单" jump-type="navigateTo" url="/pages/order/index" hover arrow />
+        <t-cell leftIcon="ellipsis" title="关于我们" jump-type="navigateTo" url="/pages/about/index" hover arrow />
     </view>
 </view>

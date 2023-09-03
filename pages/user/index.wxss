@@ -7,3 +7,6 @@ page {
 .userinfo {
     width: 100%;
 }
+.userinfo .t-icon {
+    color: #07c160;
+}

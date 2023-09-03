@@ -1,3 +1,4 @@
+// 菜单页面
 import {defImg} from './../../constant/index.js';
 import {showMessage} from '../../utils/index.js';
 const app = getApp();
