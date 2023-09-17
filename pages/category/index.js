@@ -50,12 +50,20 @@ Page({
         }
     },
     handleCellClick(event) {
-        const {key, query, type} = (event.target.dataset || {});
+        const {key, query, type, idx} = (event.target.dataset || {});
         if (type === 'icon') {
             if (!app.globalData.cart.includes(key)) {
                 app.globalData.cart.push(key);
                 showMessage('success', this, '已加入购物车');
-                this.setData({count: this.data.count + 1});
+                // 找到当前点击key在category里面数组下标
+                const outerIdx = this.data.categories.findIndex(item => {
+                    const hasKey = item.items.findIndex(ele => ele.key === key);
+                    return hasKey !== -1;
+                });
+                this.setData({
+                    count: this.data.count + 1,
+                    [`categories[${outerIdx}].items[${idx}].active`]: true
+                });
             }
         }
         else {
