@@ -24,11 +24,11 @@
     width: 30%;
     height: 100rpx;
     font-size: smaller;
-    margin: 0 2% 10rpx 1%;
+    margin: 0 1% 10rpx 1%;
     border-radius: 12rpx;
     overflow: hidden;
     box-sizing: border-box;
-    border: 1rpx solid #ddd;
+    border: 3rpx solid #ddd;
     padding: 5px;
     display: flex;
     align-items: center;
