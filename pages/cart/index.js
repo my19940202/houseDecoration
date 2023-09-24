@@ -2,7 +2,7 @@
 import {showMessage, formatCheckBoxOptions, getDateStr, mapKeysToLabel} from '../../utils/index.js';
 // 获取全局变量上共享的环境获取数据
 const app = getApp();
-const {deepOptions: options, shallowOptions} = formatCheckBoxOptions(app && app.globalData && app.globalData.category);
+let {deepOptions: options, shallowOptions} = formatCheckBoxOptions(app && app.globalData && app.globalData.category);
 
 Page({
     data: {
@@ -26,7 +26,12 @@ Page({
             });
         }
         else {
+            options = options.map(ele => ({
+                ...ele,
+                active: app.globalData.cart.includes(ele.value)
+            }))
             this.setData({
+                options,
                 service_name,
                 service: app.globalData.cart
             });
