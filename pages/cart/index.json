@@ -8,6 +8,7 @@
         "t-textarea": "tdesign-miniprogram/textarea/textarea",
         "t-button": "tdesign-miniprogram/button/button",
         "t-checkbox-group": "tdesign-miniprogram/checkbox-group/checkbox-group",
+        "t-icon": "tdesign-miniprogram/icon/icon",
         "t-checkbox": "tdesign-miniprogram/checkbox/checkbox"
     }
 }

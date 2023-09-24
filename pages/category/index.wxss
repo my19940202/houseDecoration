@@ -49,9 +49,6 @@
     background-color: #DDD;
     cursor: disabled;
 }
-.cell-right-icon {
-    background-color: red;
-}
 
 .side-bar-wrapper .title {
     padding-left: 40rpx;

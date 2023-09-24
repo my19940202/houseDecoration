@@ -40,10 +40,12 @@ Page({
         });
     },
     handleCheckbox(event) {
-        const service = event.detail.value;
+        const [idx, service] = (event.detail.value && event.detail.value[0]).split(',');
+        const serviceList = [...this.data.service, service];
         this.setData({
-            service,
-            service_name: mapKeysToLabel(this.data.options, service)
+            service: serviceList,
+            service_name: mapKeysToLabel(this.data.options, serviceList),
+            [`options[${idx}].active`]: !this.data.options[idx].active
         });
     },
     submitForm() {

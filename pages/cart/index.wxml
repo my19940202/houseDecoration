@@ -1,18 +1,34 @@
 <view class="container">
     <t-message id="t-message" />
     <view class="content">
-        <text class="checkbox-label">服务(必填)</text>
+        <view class="top-service">
+            <t-icon name="app" /><text>服务</text><text class="require-dot">*</text>
+        </view>
+        <view class="selected-text">已选服务: {{service_name}}</view>
         <view class="checkbox-wrapper">
-            <view class="selected-text">已选服务: {{service_name}}</view>
-            <scroll-view scroll-y="true" style="height: 500rpx">
-                <t-checkbox-group value="{{service}}" borderless t-class="box" options="{{options}}" bind:change="handleCheckbox" />
+            <scroll-view scroll-y="true" style="height: 330rpx">
+                <t-checkbox-group value="{{service}}" borderless t-class="box" bind:change="handleCheckbox">
+                    <view wx:for="{{options}}" wx:key="index" wx:for-item="ele"
+                        class="card {{ele.active ? 'card-active' : ''}}">
+                        <t-icon name="check" t-class="card-icon" ariaHidden="{{true}}" />
+                        <t-checkbox value="{{index}},{{ele.value}}" label="{{ele.label}}" icon="none" borderless />
+                    </view>
+                </t-checkbox-group>
             </scroll-view>
         </view>
-        <t-input label="姓名(必填)" type="nickname" bindchange="setFormData" data-label="name" value="{{name}}" placeholder="请输入您的姓名" />
-        <t-input label="小区(必填)" type="text" bindchange="setFormData" data-label="area" value="{{area}}" placeholder="请输入您小区的名称" />
-        <t-input label="楼号(必填)" type="text" bindchange="setFormData" data-label="room_no" value="{{room_no}}" placeholder="请输入您房屋的楼号" />
-        <t-input label="电话(可选)" bindchange="setFormData" type="digit" data-label="phone" value="{{phone}}" placeholder="请输入您的电话" />
-        <t-textarea label="备注(可选)" t-class="cart-textarea" placeholder="请输入备注内容" bindchange="setFormData" data-label="notes" value="{{notes}}" />
+        <t-input prefixIcon="user" type="nickname" bindchange="setFormData" data-label="name" value="{{name}}" placeholder="请输入您的姓名">
+            <text slot="label">姓名<text class="require-dot">*</text></text>
+        </t-input>
+        <t-input prefixIcon="location" type="text" bindchange="setFormData" data-label="area" value="{{area}}" placeholder="请输入您小区的名称">
+            <text slot="label">小区<text class="require-dot">*</text></text>
+        </t-input>
+        <t-input prefixIcon="more" type="text" bindchange="setFormData" data-label="room_no" value="{{room_no}}" placeholder="请输入您房屋的楼号">
+            <text slot="label">楼号<text class="require-dot">*</text></text>
+        </t-input>
+        <t-input prefixIcon="call" label="电话" bindchange="setFormData" type="digit" data-label="phone" value="{{phone}}" placeholder="请输入您的电话" />
+        <t-textarea prefixIcon="call" t-class="cart-textarea" placeholder="请输入备注内容" bindchange="setFormData" data-label="notes" value="{{notes}}">
+            <text slot="label">备注</text>
+        </t-textarea>
         <view class="submit">
             <t-button bindtap="submitForm" slot="suffix" theme="primary">提交预约</t-button>
         </view>

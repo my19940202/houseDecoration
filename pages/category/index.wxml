@@ -1,11 +1,3 @@
-<wxs module="foo">
-    var check = function (d, c) {
-        return d.label;
-    }
-    module.exports = {
-        check: check
-    }
-</wxs>
 <view class="side-bar-wrapper">
     <t-message id="t-message" />
     <view class="leftbar">
