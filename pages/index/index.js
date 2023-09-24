@@ -1,11 +1,11 @@
 // 小程序首页:
-import {bookImg, defImg, defPoster} from './../../constant/index.js';
+import {bookImg, defImg, defPoster, defCategory} from './../../constant/index.js';
 const app = getApp();
 Page({
     data: {
         imageList: [defPoster],
         defImg,
-        category: []
+        category: defCategory
     },
     onLoad() {
         // 初始化
@@ -20,17 +20,19 @@ Page({
         }
     },
     init(imageList, category) {
-        category = [
-            ...category.slice(0, 7).map(item => ({
-                ...item.items[0],
-                url: `/pages/detail/index?key=${item.items[0].key}&label=${item.items[0].label}`
-            })),
-            {
-                label: '立即预约',
-                image: bookImg,
-                url: '/pages/cart/index?type=index'
-            }
-        ];
+        if (category && category.length) {
+            category = [
+                ...category.slice(0, 7).map(item => ({
+                    ...item.items[0],
+                    url: `/pages/detail/index?key=${item.items[0].key}&label=${item.items[0].label}`
+                })),
+                {
+                    label: '立即预约',
+                    image: bookImg,
+                    url: '/pages/cart/index?type=index'
+                }
+            ];   
+        }
         this.setData({imageList, category});
     },
    onShareTimeline: function() {
